@@ -1,0 +1,29 @@
+[
+{
+	"FirstName":"John",
+	"LastName":"Joe",
+	"Gender":"Male",
+	"Salary":30000
+},
+
+{
+	"FirstName":"Gokul",
+	"LastName":"Ganesan",
+	"Gender":"Male",
+	"Salary":35000
+},
+
+{
+	"FirstName":"Sathish",
+	"LastName":"Ganesan",
+	"Gender":"Male",
+	"Salary":40000
+},
+
+{
+	"FirstName":"Ilamathi",
+	"LastName":"Ganesan",
+	"Gender":"Male",
+	"Salary":50000
+},
+]

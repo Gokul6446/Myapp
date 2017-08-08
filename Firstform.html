@@ -1,0 +1,247 @@
+<html lang="en"  ng-app="Myapp">
+   <head>
+       <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+      <script type="text/javascript">   </script>
+
+       <script src="formcontroller.js"></script>
+   </head>
+   <body >
+<div ng-controller="formctrl" layout-paddinglayout="column" ng-cloak="" >
+  <md-card>
+     <md-card-title>
+          <md-card-title-text>
+          <span class="md-headline">Sample Form</span>              
+          </md-card-title-text>
+       </md-card-title>  
+       <br/>
+       <br/>
+         <md-card-content>
+          
+          <form name="userForm" novalidate>
+            <!-- <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-autoselect>
+              <md-tab label=SELECTFIELDS>
+                            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="padding:10px;"> -->
+        <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Name :</label>
+            <validation-true-false></validation-true-false>
+            <input type="text" name="name" ng-model="user.name" required ng-keypress="filterstring($event)">
+            <div ng-messages="userForm.name.$error" ng-if="userForm.name.$touched">
+          <div ng-message="required"> Please Enter your Name</div>
+            </div>  
+          </md-input-container>
+       
+          
+         <!--  </md-card>
+          </md-tab>
+          </md-tabs> -->
+          <br/>
+          <br/>
+          
+          <!--  <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-autoselect>
+              <md-tab label=SELECTFIELDS>
+                            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="padding:10px;"> -->
+     
+          <md-input-container class="md-block"  flex-gt-sm>
+            <label>Username :</label>
+            <input type="text" name="username" ng-model="user.username" minlength="3" maxlength="8" required ng-keypress="filterstring($event)" >
+          <div ng-messages="userForm.username.$error" ng-if="userForm.username.$touched">
+            <div ng-message="minlength">Username is too short.</div>
+            <div ng-message="maxlength">Username is too long.</div>
+           <div ng-message="required"> Please Enter Username</div>
+          </div>
+      </md-input-container> 
+        </div>
+      
+      
+     <!--  </md-card>
+      </md-tab>
+      </md-tabs>  -->
+      <br/>
+      <br/>   
+       
+        <!--  <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-autoselect>
+              <md-tab label=SELECTFIELDS>
+                            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="padding:10px;"> -->
+           <div layout-gt-sm="row">
+          <md-input-container class="md-block" flex-gt-sm>
+            <label>Email:</label>
+            <input type="email" name="email" ng-model="user.email" ng-pattern="/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" ng-keypress="filterstring($event)" required>
+           <!--  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/ -->
+           <div ng-messages="userForm.email.$error" ng-if="userForm.email.$touched" >
+             <div ng-message="userForm.email.$invalid"> Invalid id  </div>
+             <div ng-message="pattern">Please Enter Valid Mail id</div>
+            <div ng-message="required">Please Enter ur email id</div>
+          
+            </div>
+            </md-input-container>
+          
+            
+           <!--  </md-card>
+            </md-tab>
+            </md-tabs> -->
+         
+       </md-input-container>
+       <br/>
+       <br/>
+      
+       <!-- <md-tabs md-selected="selectedIndex" md-dynamic-height md-border-bottom md-autoselect>
+              <md-tab label=SELECTFIELDS>
+                            <md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch style="padding:10px;"> -->
+        
+          <md-input-container class="md-block" flex-gt-sm>
+       <label>Mobile Number:</label>
+       <input type="text" name="number" ng-model="user.mobnumber" minlenghth="10" maxlength="10" ng-pattern="/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/" required />
+       <div ng-messages="userForm.number.$error" ng-if="userForm.number.$touched">
+      
+       <div ng-message="maxlength">number  not more than 10 digit</div>
+        
+        <div ng-message="required">Please Enter Mobile Number</div>
+        <div ng-message="pattern">Must be a number</div>
+        </div>
+        </md-input-container>
+         </div>
+        <!-- </md-card>
+        </md-tab>
+        </md-tabs>  -->
+               </form>
+                    </md-card-content>
+                       <md-card-actions layout="row" layout-align="center center">
+                      
+                      <md-button ng-click="submitForm()" class="md-raised md-warn">Submit</md-button>    
+                                    
+                      <md-card-actions layout="row" layout-align="left right">    
+                      <md-button ng-click="reset()" class="md-raised md-warn">Reset</md-button>
+
+             </md-card-actions>
+             </md-card-actions>
+  </md-card>
+  </div>
+  <br/>
+<!-- 
+<div>
+   <md-card>
+     <md-card-title>
+          <md-card-title-text>
+              <span class="md-headline">Form</span>              
+          </md-card-title-text>
+       </md-card-title>  
+         <md-card-content>         
+            <table class="table table-bordered">
+                <tbody>
+                    <tr>
+                        <td>ERROR: {{userForm.$error}} </td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.$valid, danger: userForm.$invalid }">Valid</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.$pristine, danger: !userForm.$pristine }">Pristine</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.$dirty }">Dirty</td>
+                    </tr>
+                </tbody>
+            </table>
+            </md-card-content>  
+        </md-card>
+  <div layout="row" layout-padding>
+        <md-card flex>
+            <md-card-title>
+          <md-card-title-text>
+              <span class="md-headline">Name</span>              
+          </md-card-title-text>
+       </md-card-title>  
+         <md-card-content>               
+            <table>
+                <tbody>
+                    <tr>
+                        <td ng-class="{ success: userForm.name.$valid, danger: userForm.name.$invalid }">Valid</td>
+                    </tr>
+                   
+                   
+                    <tr>
+                        <td ng-class="{ success: userForm.name.$pristine, danger: !userForm.name.$pristine }">Pristine</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.name.$dirty }">Dirty</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.name.$touched }">Touched</td>
+                    </tr>
+                </tbody>
+            </table>
+                    </md-card-content>               
+        </md-card>
+        <md-card flex>
+            <md-card-title>
+          <md-card-title-text>
+              <span class="md-headline">Username</span>              
+          </md-card-title-text>
+       </md-card-title>  
+         <md-card-content>           
+            <table>
+                <tbody>
+                    <tr>
+                        <td ng-class="{ success: userForm.username.$valid, danger: userForm.username.$invalid }">Valid</td>
+                    </tr>
+                   <tr>
+                        <td ng-class="{ success: userForm.username.$pristine, danger: !userForm.username.$pristine }">Pristine</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.username.$dirty }">Dirty</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.username.$touched }">Touched</td>
+                    </tr>
+                </tbody>
+            </table>
+                    </md-card-content>           
+        </md-card>
+        <md-card flex>
+            <md-card-title>
+          <md-card-title-text>
+              <span class="md-headline">Email</span>              
+          </md-card-title-text>
+       </md-card-title>  
+         <md-card-content>                      
+            <table>
+                <tbody>
+                    <tr>
+                        <td ng-class="{ success: userForm.email.$valid, danger: userForm.email.$invalid }">Valid</td>
+                    </tr>
+                     <tr>
+                        <td ng-class="{ success: userForm.email.$pristine, danger: !userForm.email.$pristine }">Pristine</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.email.$dirty }">Dirty</td>
+                    </tr>
+                    <tr>
+                        <td ng-class="{ success: userForm.email.$touched }">Touched</td>
+                    </tr>
+                </tbody>
+            </table>
+                    </md-card-content>                      
+        </md-card>
+        </div>
+        <md-card>
+        <md-card-title>
+        <md-card-title-text>
+        <span class="md-headline">Mobile Number</span>
+        </md-card-title-text>
+        </md-card-title>
+       
+        </table>
+        </tdody>
+        </md-card-content>
+        <td ng-class="{success: userForm.number.$valid, danger: userForm.number.$invalid }">Valid</td> 
+         
+            </div> -->
+    
+</body>
+</html>

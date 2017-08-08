@@ -1,0 +1,69 @@
+<html lang="en" >
+   <head>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+         <script language="text/javascript"></script>
+           <script src="cal2.js"></script>
+   </head>
+      
+   <body ng-app="firstApplication"> 
+   <div class="container">
+      <div class="datepickerdemo" ng-controller="dateController as ctrl" layout="column" ng-cloak>
+         <md-content>
+            <h4>Standard Date Picker</h4>
+            <md-datepicker 
+               ng-model="myDate1" 
+               md-placeholder="Enter date"></md-datepicker>
+            <h4>Disabled Date Picker</h4>
+            <md-datepicker 
+               ng-model="myDate2" 
+               md-placeholder="Enter date" 
+               disabled></md-datepicker>
+            <h4>Date-picker with min and max dates</h4>
+            <md-datepicker 
+               ng-model="myDate3" 
+               md-placeholder="Enter date"
+               md-min-date="minDate" 
+               md-max-date="maxDate"></md-datepicker>
+            <h4>Date-picker with only selectable weekends</h4>
+            <md-datepicker 
+               ng-model="myDate4" 
+               md-placeholder="Enter date"
+               md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+            <h4>Date-picker with only selectable weekends in a range</h4>
+            <md-datepicker 
+               ng-model="myDate5" 
+               md-placeholder="Enter date"
+               md-min-date="minDate" 
+               md-max-date="maxDate"
+               md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+            <h4>Date-picker with validation mesages</h4>
+            <form name="myForm">
+               <md-datepicker 
+                  name="dateField" 
+                  ng-model="myDate6" 
+                  md-placeholder="Enter date"
+                  required 
+                  md-min-date="minDate" 
+                  md-max-date="maxDate"
+                  md-date-filter="onlyWeekendsPredicate"></md-datepicker>
+               <div class="validation-messages" ng-messages="myForm.dateField.$error">
+                  <div ng-message="valid">The entered value is not a date!</div>
+                  <div ng-message="required">This date is required!</div>
+                  <div ng-message="mindate">Date is too early!</div>
+                  <div ng-message="maxdate">Date is too late!</div>
+                  <div ng-message="filtered">Only weekends are allowed!</div>
+               </div>
+            </form>
+         </md-content>
+	   </div>
+      </div>
+   </body>
+</html>
+      
+
+

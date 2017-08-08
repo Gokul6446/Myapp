@@ -1,0 +1,34 @@
+{
+	
+	[
+	{
+	"Name":"Gokul",
+	"City":"Namakkal",
+	"Country":"India"
+	},
+
+	{
+	"Name":"Ganesan",
+	"City":"Namakkal",
+	"Country":"USA"
+	},
+
+	{
+	"Name":"Sathish",
+	"City":"Namakkal",
+	"Country":"Canada"
+	},
+
+	{
+	"Name":"Ilamathi",
+	"City":"Namakkal",
+	"Country":"London"
+	},
+
+	{
+	"Name":"Balamurugan",
+	"City":"Namakkal",
+	"Country":"Paris"
+	}
+	]
+}

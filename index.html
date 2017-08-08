@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-init="firstName" lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="myApp.js"></script> 
+    <script src="myCtrl.js"></script>
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+</head>
+<!-- <style>
+body
+{
+
+background-image: url("grad.jpg");
+background-repeat: repeat;
+background-position: right top;
+
+background-attachment: fixed;
+
+}
+p
+{
+  text-align: center;
+}
+
+</style> -->
+
+<body style="color: black">
+    <h1> My Application</h1>
+    <div>
+        <ul id=nav>
+            <li class=nav1><a href="#home">Home</a></li>
+            <li class=nav1><a href="#about">About</a></li>
+            <li class=nav1><a href="#gallery">Gallery</a></li>
+            <li class=nav1> <a href="#contact">Contact Us</a></li>
+        </ul>
+    </div>
+    </br>
+    </br>
+    <div class="container">
+        <h1>My First Bootstrap Page</h1>
+        <blockquote>
+            <p>Hi Welcome to Bootstrap Concepts.It is
+                <mark>For Efficiency and responsive web Page</mark>
+            </p>
+        </blockquote>
+        <p>The
+            <abbr title="Oil Natural Gas Commision">ONGC </abbr>company</p>
+        <p> The CSS contains Various Elements such as <code>span</code>,<code>section</code>,<code>div</code>,<code>par</code>use
+            <kbd> ctrl+p</kbd> and
+            <kbd>ctrl+s</kbd> to highlight selected contents</p>
+        <p>Multiple lines </p>
+        <pre> hi 
+ welcome 
+ to 
+ the 
+ New 
+ Company
+ </pre>
+    </div>
+    <h1>Data Lists</h1>
+    <div style="text-align: center;">
+        <dl>
+            <dt>Coffee</dt>
+            <dd>In Morning time</dd>
+            <dt>Tea</dt>
+            <dd>Evening time</dd>
+        </dl>
+        <h2>Contextual Colors</h2>
+        <p>Use the contextual classes to provide "meaning through colors":</p>
+        <p class="text-muted">This text is muted.</p>
+        <p class="text-primary">This text is important.</p>
+        <p class="text-success">This text indicates success.</p>
+        <p class="text-info">This text represents some information.</p>
+        <p class="text-warning">This text represents a warning.</p>
+        <p class="text-danger">This text represents danger.</p>
+        <h2>Table</h2>
+        <div class="table-responsive">
+            <table class="table table-condensed">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gokul</td>
+                        <td>Ganesan</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Sathish </td>
+                        <td>Ganesan</td>
+                        <td>27</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+              
+                    <div class="col-md-3 col-sm-8"  >
+                    <a href="car.jpg" class="thumbnail">
+                        <img src="car.jpg" class="img-responsive" alt="check the Image">
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-8" > 
+                    <a href="car1.jpeg" class="thumbnail">
+                        <img src="car1.jpeg" class="img-responsive" alt="check the Image">
+                        </a>
+                    </div>
+                    <div class="col-md-3 col-sm-8">
+                    <a href="car2.jp/g" class="thumbnail" >
+                        <img src="car2.jpg" class="img-responsive" alt="check the Image">
+                     </a>
+                    </div>
+                    <div class="col-md-3 col-sm-8">
+                    <a href="car2.jp/g" class="thumbnail" >
+                        <img src="car2.jpg" class="img-responsive" alt="check the Image">
+                     </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+        </div>
+        <div class="container-fluid">
+            <h1>My Bootstrap Container Fluid</h1>
+            <p>This Page is provides Full Width Container</p>
+            <div class="row">
+                <div class="col-sm-4" style="background-color: Red;">welcome</div>
+                <div class="col-sm-4" style="background-color: Blue;">Good Morning</div>
+                <div class="col-sm-4" style="background-color: green;">Happy Days</div>
+            </div>
+        </div>
+        <div ng-controller="myCtrl">
+          <h3 ng-click ="changename()">
+          {{name1}}{{name2}}</h3>
+            <h1 class="hea"> {{myHeader}} </h1> {{firstName + " " +lastName}}
+              <p>The name is : {{ firstName | lowercase }}
+              </p>
+                <p> Price : {{price | currency }}
+                  <h4> The below line shows the todays date of Calendar</h4>
+                <p> Date :{{ today | date :"dd/M/yyyy" }}</p>
+                <!-- <p><input type="text" ng-model="test"></p>   -->
+                <h3>Looking with Objects:</h3>
+                <ul>
+                    <li ng-repeat="x in names | orderBy: 'country'">
+                        {{ x.name+ ','+ x.country}}
+                    </li>
+                </ul>
+              <h1> Customer Details</h1>
+                <pre>{{customer | json }}</pre>
+                <pre>{{customer1 | json :2}}</pre>
+
+              </div>
+        
+        <P> Welcome to our New World</P>
+        <p> Name:<input type="text" ng-model="firstName"></p>
+        <p ng-bind="firstName"></p>
+        <p>{{firstName}}</p>
+        <table border = "2">
+            <tr>
+            <td><input type="checkbox" ng-model="enableDisableButton">Disabled</td>
+            <p >{{enableDisableButton}}</p>
+            <td><button ng-disabled="enableDisableButton">Click Me!</button></td>
+            </tr>
+            <tr>
+            <td><input type="checkbox" ng-model="showHide">show Button</td>
+            <td><button ng-hide="showHide">Click Me!</button></td>
+            <p>{{showHide}}</p>
+            </tr>
+            <tr>
+            <td><button ng-click="clickcounter=clickcounter+1">click me </button></td>
+                <td> {{clickcounter}}</td>
+
+            </tr>
+        </table>
+        <table border = "1">
+         <tr>
+         
+         <td>First Name</td>
+         <td><input type="text" ng-model="firstName"/></td>
+         </tr>
+         <tr>
+         <td>Last Name</td>
+         <td><input type="text" ng-model="lastName"/></td>
+         </tr>
+         <tr>
+         <td>Quantity</td>
+         <td><input type="text" ng-model="quantity"/></td>
+         </tr>
+         <tr>
+         <td>Cost</td>
+         <td><input type="text" ng-model="Cost" /></td>
+         </tr>
+         <tr>
+         <td><input type="button" value="Click Here" ng-click="message=firstName +' ' + lastName+ ' ' +'value is' + ' ' +Cost *quantity"/>
+         </td>
+         <td>{{message}}</td>
+         </tr>
+         </table>
+         <div class="container">
+         <div ng-controller="datacontroller">
+         <input type="text" ng-model="search.firstName"/>
+         <input type="text" ng-model="search.lastName"/>
+         <input type="text" ng-model="search.salary"/>
+         </br>
+         <table style ="border:2px solid black ;width:500px;">
+             <thead>
+                 <tr>
+                 <th>FirstName</th>
+                 <th>LastName</th>
+                 <th>Gender</th>
+                 <th>Salary</th>
+             </thead>
+             <tbody>
+                 <tr ng-repeat= "employee in employees |filter:search |orderBy:'-salary'">
+                 <td>{{employee.firstName| uppercase}}</td>
+                 <td>{{employee.lastName | lowercase}}</td>
+                 <td>{{employee.Gender}}</td>
+                 <td>{{employee.salary | currency}}</td>
+                 </tr>
+             </tbody>
+         </table>
+</div>
+</div>
+<h2>AngularJS Sample Form</h2>
+<div ng-controller="myform">
+<form name="studentform">
+<table border="1">
+    <tr>
+         <td>Enter First Name:</td>
+         <td><input name="firstname" type="text" ng-model="firstName" ng-minlength="3" ng-maxlength="8" required>
+                 <span style="color: red">
+                      <span ng-show="studentform.firstname.$error.required">
+                             First name is required </span>
+                       <span ng-show="studentform.firstname.$error.minlength">
+                          name too short
+                        </span>
+                          <span ng-show="studentform.firstname.$error.maxlength">
+                            Name too long</span>
+   
+                           </td>
+                           </tr>
+
+                          <tr>
+                       <td>Enter Last Name</td>
+                       <td><input name="lastname" type="text" ng-model="lastName"  minlength="8" required>
+                       <span style="color: red" ng-show="studentform.lastname.$error.required">
+                       Last Name is required
+                       </span>
+                       <span ng-show="studentform.lastname.$error.minlength">
+                       lastname is too short 
+                       </span>
+                       </td>
+                       </tr>
+
+                       <tr>
+                       <td>Email</td>
+                       <td> <input type="email" name="email" ng-model="email" required>
+                       <span style="color: red" ng-show="studentform.email.$error.required">Email is required</span>
+                       <span ng-show="studentform.email.$error.email">Invalid email address</span>
+          
+                       </td>
+                       </tr>
+   </span>
+   <tr>
+   <td><button ng-click="reset()">Reset</button>
+</td>
+<td>
+<button ng-disabled ="studentform.firstname.$invalid || studentform.lastname.$invalid || studentform.email.$invalid" ng-click="submit()">
+Submit
+</button>
+</td>
+</tr>
+</table></form></div>
+   <div ng-controller="myCtrl">
+   <p>Enter a number :<input type="number" ng-model="number"/></p>
+   <button ng-click="square()">square</button>
+   <p>Result is :{{result}}</p>
+   </div>
+        
+
+        <div data-ng-app="" data-ng-init="quantity=1:price=5">
+            <p>
+                <input type="number" ng-model="quantity">
+                <p>
+                    <input type="number" ng-model="price">
+                    <p> {{quantity * price }}</p>
+        </div>
+        <div>
+            Plain Text: {{ 10+20 }}
+        </div>
+        <div>
+            Expression: {{ 10+20 }}
+        </div>
+        <div>
+            <p> Enter the name :
+                <input type="text" ng-model="name">
+            </p>
+            <p> Hello {{name}}!</p>
+        </div>
+        <p>Current Url Page </p>
+        <h4>{{myUrl }}</h4>
+        <p id="par"> Javatpoint</p>
+        <p class="center">Hello welcome to the show</p>
+        <h1>Demonstrating New Model</h1>
+        <p>The New Model is to define the latest technology of software solutions</p>
+        <div id="p1">This text is the actual content of the box. We have added a 25px padding, 25px margin and a 25px green border. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+        <div class="H1">good morning</div>
+        <div class="H2">GOOD MORNING</div>
+        <div class="H3">common man </div>
+        <a href="default.asp" target="blank">Click Me</a>
+        <p> List Types of CSS</p>
+        <ul class="a">
+            <li>Coffee</li>
+            <li>Tea</li>
+            <li>Badam</li>
+        </ul>
+        <ul class="b">
+            <li> Car</li>
+            <li>Bike</li>
+            <li>Lorry</li>
+        </ul>
+        <ul class="c">
+            <li> Cake</li>
+            <li>Chocolate</li>
+            <li>Snacks</li>
+        </ul>
+        <ul class="d">
+            <li>Vijay</li>
+            <li>Ajith</li>
+            <li>Gokul</li>
+        </ul>
+        <table>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>MOB</th>
+                <th>Nationality</th>
+                <th>Country</th>
+            </tr>
+            <tr>
+                <td>Peter</td>
+                <td>Griffin</td>
+                <td>January</td>
+                <td>Indian</td>
+                <td>India</td>
+            </tr>
+            <tr>
+                <td>Lois</td>
+                <td>Griffin</td>
+                <td>Febrauary</td>
+                <td>American</td>
+                <td>USA</td>
+            </tr>
+        </table>
+        <!-- <div class=im >The pic is all about the nature and gradient image</div>
+<img src ="grad.jpg" width="350" height="300" display="block" alt="Sry Display Crct Imag"> -->
+        <!-- <div class="footer">Copyrights Frugal-Talent Solutions Pvt. Ltd.</div>
+-->
+        <div class="gallery">
+            <a target="blank" href="grad.jpg">
+                <img src="grad.jpg" alt="Check correct image" width="300" height="200">
+            </a>
+            <div class="desc">Add a decsiption</div>
+        </div>
+        <div class="gallery">
+            <a target="blank" href="grad.jpg">
+                <img src="grad.jpg" alt="Check correct image" width="300" height="200">
+            </a>
+            <div class="desc">Add a decsiption</div>
+        </div>
+        <div class="gallery">
+            <a target="blank" href="grad.jpg">
+                <img src="grad.jpg" alt="Check correct image" width="300" height="200">
+            </a>
+            <div class="desc">Add a decsiption</div>
+        </div>
+        <div class="gallery">
+            <a target="blank" href="grad.jpg">
+                <img src="grad.jpg" alt="Check correct image" width="300" height="200">
+            </a>
+            <div class="desc">Add a decsiption</div>
+        </div>
+        </br>
+        <h2>Hoverable Dropdown</h2>
+        <p>Move the mouse over to see dropdown text</p>
+        <div class="dropdown">
+            <span> Mouse Over me </span>
+            <div class="dropdown-content">
+                <p> Hello World!</p>
+            </div>
+        </div>
+</body>
+
+</html>

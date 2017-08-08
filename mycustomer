@@ -1,0 +1,80 @@
+angular js is jsgraw helps t obind   html ui and js object . nothing but bindingframework 
+ajs vers is 1.x and 2.  1 is most matured 
+rc is release candidate used in production 
+core angu  goal is for binding
+ jquery main goal is javascript simple
+ng syntax  is from angular 
+in angular hyphen is because of not collide with the html . in html tags there is no hyphen tags.
+
+to bind function class and div id ui
+for that we create new object 
+instead of that use ng-controller it internally create object to bind the customer with CustScreen.
+to bind the properties we use ng-model
+angular had a readymade service called  $scope 
+noo need to declare
+this instead using $scope using as parameter in function 
+wenever $scope is used in function parameter is dependency injected by the angular framework .
+whatever we used as $ called as ready made services of angular dependent injection and also we cannot create object for that  .angular create them automatically and just reference like this and angular will do the dependency injection 
+
+
+MVC 
+ view is overall view of the websites with seeing menus ,headers like wise
+model is data provider to view model does not provide data directly through controller
+controller is process of which data to which view 
+
+CSS Selector
+
+element,id,class,Universal,Group selectors
+  p{}    #p{} .centre{} *{}   p,center,h1{}
+
+CSS Box Model
+
+Margin,border,padding,content
+margin Clears outside  the border area . This is transparent.
+It is around padding and content.
+padding is around the content . it is transparent
+content is which contains texts and images.
+
+bootsrap concepts
+
+It is a free front end framework for easier and faster web development.
+it is abilty to give create easy responsive designs
+
+Bootstraps Grid System
+there are 12 columns
+1,1,1,1,1,1,1,1,1,1,1,1
+4,4,4
+4,8
+6,6,
+12
+
+it has four classes
+
+xs-phones
+sm-tablets
+md-desktops
+lg-larger desktops
+
+angular js css classes
+
+ng-valid
+ng-invalid
+ng-pristine
+ng-dirty
+ng-touched
+ng-untouched
+
+AJAX
+
+It is Asynchronous Javascript and XML
+It is faster , interactive web applications
+Language Independent combine with any other languages .
+
+Http service
+to get request from the server and returns a response.
+
+Ther are various shortcut methods for http services
+.get(),.delete(), .head(), .jsonp(), .patch(), .post(), .put().
+
+properties
+.config, .data, .headers, .status, .statusText

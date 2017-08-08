@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head>
+	<title>Nested Html</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>   
+<script src="myApp.js"></script> 
+    <script src="myCtrl.js"></script>
+</style>
+</head>
+<body>
+<div ng-controller="myCtrl">
+<p>Welcome Message</p>
+<h5>{{message}}</h5>
+</div>
+
+<script>
+	app.controller('myCtrl',function($scope,$http)
+	{
+       $http.get("page1.html").then(function(response)
+{
+	$scope.message=response.data;
+});
+	});
+</script>
+</body>
+</html>
+
+
